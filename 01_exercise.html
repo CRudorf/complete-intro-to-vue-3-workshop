@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ tvShow }}</h1>
+        <div>
+            <div v-for="character in listOfCharacters">
+                <h3> {{ character.name }} </h3>
+                <p>Role: {{ character.role }}</p>
+                <p>Likes: {{ character.likes }}</p>
+            </div>
+        </div>    
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const { createApp } = Vue
+
+  const app = createApp({
+    data() {
+      return {
+        tvShow: 'Abbott Elementary',
+        listOfCharacters: [
+          {
+            name: 'Janine',
+            role: 'Main character',
+            likes: 'Her job',
+          },
+          {
+            name: 'Jacob',
+            role: 'Corny white guy',
+            likes: 'Acapella and Obama'
+          },
+          {
+            name: 'Mr. Johnson',
+            role: 'Custodial Genius',
+            likes: 'Trash Day'
+          },
+          {
+            name: 'Ava',
+            role: 'Principal (barely)',
+            likes: 'Taking selfies with Gritty'
+          },
+          {
+            name: 'Barbara',
+            role: 'Kindergarten teacher',
+            likes: 'Jesus'
+          },
+          {
+            name: 'Melissa',
+            role: '2nd / 3rd grade teacher',
+            likes: 'Having a guy for everything'
+          },
+
+        ]
+      }
+    }
+  })
+  app.mount('#app')
+</script>
+</html>
